@@ -144,7 +144,7 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 ifeq ($(TARGET_CUSTOM_SYSTEM_FORMAT),true)
     TARGET_RECOVERY_FSTAB := device/bq/vegetalte/rootdir/etc/fstab.f2fs
 else
-    TARGET_RECOVERY_FSTAB := device/bq/vegetalte/rootdir/etc/fstab.evita
+    TARGET_RECOVERY_FSTAB := device/bq/vegetalte/rootdir/etc/fstab.qcom
 endif
 
 # RIL
