@@ -140,12 +140,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-ifeq ($(TARGET_CUSTOM_SYSTEM_FORMAT),true)
-    TARGET_RECOVERY_FSTAB := device/bq/vegetalte/rootdir/etc/fstab.f2fs
-else
-    TARGET_RECOVERY_FSTAB := device/bq/vegetalte/rootdir/etc/fstab.qcom
-endif
 
 # RIL
 TARGET_RIL_VARIANT := caf
@@ -157,15 +151,23 @@ BOARD_SEPOLICY_DIRS += device/bq/vegetalte/sepolicy
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
-# TWRP
-BOARD_HAS_NO_REAL_SDCARD := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_EXCLUDE_SUPERSU := true
-TW_INCLUDE_CRYPTO := true
-TW_NO_SCREEN_BLANK := true
-TW_THEME := portrait_hdpi
 
+# TWRP-Specific
+TARGET_RECOVERY_FSTAB := device/bq/vegetalte/rootdir/etc/twrp.fstab
+TW_THEME := portrait_hdpi
+RECOVERY_SDCARD_ON_DATA := true
+TW_INCLUDE_CRYPTO := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TW_TARGET_USES_QCOM_BSP := true
+TW_NEW_ION_HEAP := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
