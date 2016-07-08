@@ -44,7 +44,13 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_RAMDISK_OFFSET     := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_DTBTOOL_ARGS := -2
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8-linaro
+
+# Kernel Toolchain
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8-uber/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi
+
+# Rom Toolchain
+TARGET_GCC_VERSION_EXP := 4.9-uber
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := aquarise5,vegetalte
