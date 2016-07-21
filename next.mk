@@ -3,13 +3,13 @@ TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
 # Inherit some common CM stuff
-$(call inherit-product, vendor/slim/config/common_full_phone.mk)
+$(call inherit-product, vendor/next/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/bq/vegetalte/full_vegetalte.mk)
 
 PRODUCT_RELEASE_NAME := Aquaris E5
-PRODUCT_NAME := slim_vegetalte
+PRODUCT_NAME := next_vegetalte
 
 # Set product device & name
 PRODUCT_BUILD_PROP_OVERRIDES += \
