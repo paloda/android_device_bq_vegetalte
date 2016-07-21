@@ -2,7 +2,7 @@
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-# Inherit some common CM stuff
+# Inherit some common AOSP stuff
 $(call inherit-product, vendor/next/config/common_full_phone.mk)
 
 # Inherit device configuration
