@@ -35,7 +35,7 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/bq/vegetalte
-TARGET_KERNEL_CONFIG := cyanogenmod_vegetalte_defconfig
+TARGET_KERNEL_CONFIG := vegetalte_defconfig
 TARGET_KERNEL_ARCH := arm
 BOARD_KERNEL_CMDLINE := androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1
 BOARD_KERNEL_BASE := 0x80000000
@@ -153,7 +153,7 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 
 # TWRP-Specific
-TARGET_RECOVERY_FSTAB := device/bq/vegetalte/rootdir/etc/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/bq/vegetalte/rootdir/etc/fstab.qcom
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TW_INCLUDE_CRYPTO := true
